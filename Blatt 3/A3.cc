@@ -14,6 +14,10 @@ int multsignal(int a, int b) {
 
 // b)
 // c) (exponent,#multiplikationen): (3,3), (5,4), (6,4)
+// d) Abarbeitung entspricht dem Substitutionsmodell, denn ansonsten hätten wir mehr
+//    Multiplikationen als in c) angegeben. Denn dann dann würde quadrat(exp(b,e))
+//    compiliert zu exp(b,e)*exp(b,e) und exp(b,e) müsste 2 mal berechnet werden.
+//    Es wird aber compiliert zu e=exp(b,e); e*e und exp muss nur einmal berechnet werden.
 int exponentation(int basis, int exponent)
 {
   return cond(exponent<=0, cond(exponent==0,1,0),
